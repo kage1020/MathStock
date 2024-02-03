@@ -1,3 +1,3 @@
 # 東京科学大学(東京工業大学)
 
-* [1984-nian.md](1984-nian.md "mention")
+* [1984.md](1984.md "mention")

@@ -1,0 +1,313 @@
+---
+title: 1990年 東京科学大学(東京工業大学)
+description: 東京科学大学(東京工業大学)の過去問
+tableOfContents: false
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components'
+import { Card } from '@/components/Card'
+import { List, ListItem } from '@/components/List'
+
+<Tabs>
+  <TabItem label="問題">
+    <Card>
+      $x$，$y$，$z$，$w$ を正数とする．任意の正の整数 $m$，$n$ に対して，
+
+      $$
+        \left(x^{\frac{1}{m}}+y^{\frac{1}{m}}\right)^n+\left(z^{\frac{1}{m}}+w^{\frac{1}{m}}\right)^n=\left\{\left(x^{\frac{n}{m}}+z^{\frac{n}{m}}\right)^{\frac{1}{n}}+\left(y^{\frac{n}{m}}+w^{\frac{n}{m}}\right)^{\frac{1}{n}}\right\}^n
+      $$
+
+      が成り立つための必要十分条件を求めよ。
+    </Card>
+
+  </TabItem>
+  <TabItem label="解答">
+    $x^{1/m}=X$，$y^{1/m}=Y$，$z^{1/m}=Z$，$w^{1/m}=W$ とおくと，
+
+    $$
+    (X+Y)^n+(Z+W)^n=\left\{\left(X^n+Z^n\right)^{\frac{1}{n}}+\left(Y^n+W^n\right)^{\frac{1}{n}}\right\}^n\tag{1}
+    $$
+
+    となる。(1)式が任意の正の整数で成立するならば，$n=2$ のときも(1)式が成立することが必要である．すなわち,
+
+    $$
+    \begin{align}
+      (X+Y)^2+(Z+W)^2&=\left\{(X^2+Z^2)^{\frac{1}{2}}+(Y^2+W^2)^{\frac{1}{2}}\right\}^2\nonumber\\
+      XY+ZW&=\sqrt{X^2+Z^2}\sqrt{Y^2+W^2}\nonumber\\
+      (XY+ZW)^2&=(X^2+Z^2)(Y^2+W^2)\nonumber\\
+      (XW-YZ)^2&=0\nonumber\\
+      \therefore XW&=YZ\tag{2}
+    \end{align}
+    $$
+
+    が必要である．
+
+    逆に(2)式のとき，正の実数 $k$ を用いて $Z=kX$，$W=kY$ とおくことができ，このとき，
+
+    $$
+    \begin{align*}
+      \left(\text{(1)の左辺}\right)&=(X+Y)^n+k^n(X+Y)^n=(1+k^n)(X+Y)^n\\
+      \left(\text{(1)の右辺}\right)&=\left[\left\{(1+k^n)X^n\right\}^{\frac{1}{n}}+\left\{(1+k^n)Y^n\right\}^{\frac{1}{n}}\right]^n\\
+      &=\left\{(1+k^n)^{\frac{1}{n}}(X+Y)\right\}^n\\
+      &=(1+k^n)(X+Y)^n
+    \end{align*}
+    $$
+
+    したがって(1)式は任意の正の整数 $n$ に対して成立する．
+
+    以上から，求める条件は，任意の正の整数 $m$ に対して $XW=YZ$ が成り立つ．すなわち，$xw=yz$ である．
+
+  </TabItem>
+</Tabs>
+
+<Tabs>
+  <TabItem label="問題">
+    <Card>
+      <List type="decimal">
+        <ListItem>
+          $n-1$ 次多項式 $\mathrm{P}_n(x)$ と $n$ 次多項式 $\mathrm{Q}_n(x)$ ですべての実数 $\theta$ に対して
+
+          $$
+          \begin{align*}
+              \sin(2n\theta)&=n\sin(2\theta)\mathrm{P}_n(\sin^2\theta)\\
+              \cos(2n\theta)&=\mathrm{Q}_n(\sin^2\theta)
+          \end{align*}
+          $$
+
+          を満たすものが存在することを帰納法を用いて示せ．
+        </ListItem>
+        <ListItem>
+          $k=1, 2, \ldots, n-1$ に対して，$\alpha_k=\left(\sin\dfrac{k\pi}{2n}\right)^{-2}$ とおくと，
+
+          $$
+            \mathrm{P}_n(x)=(1-{\alpha_1}x)(1-{\alpha_2}x)\cdots(1-{\alpha_{n-1}}x)
+          $$
+
+          となることを示せ。
+        </ListItem>
+        <ListItem>
+          $\displaystyle\sum_{k=1}^{n-1}\alpha_k=\dfrac{2n^2-2}{3}$ を示せ．
+        </ListItem>
+      </List>
+    </Card>
+
+  </TabItem>
+  <TabItem label="解答">
+    <List type="decimal">
+      <ListItem>
+        $n-1$ 次多項式 $\mathrm{P}_n(x)$ と $n$ 次多項式 $\mathrm{Q}_n(x)$ ですべての実数 $\theta$ に対して，
+
+        $$
+          \sin(2n\theta)=n\sin(2\theta)\mathrm{P}_n(\sin^2\theta),\ \cos(2n\theta)=\mathrm{Q}_n(\sin^2\theta)\tag{$\ast$}
+        $$
+
+        を満たすものが存在する．これを数学的帰納法で示す．
+        <List type="upper-roman">
+          <ListItem>
+            $n=2$のとき
+
+            $$
+            \begin{align*}
+              \sin 4\theta&=2\sin{2\theta}\cos{2\theta}=2\sin2\theta(1-2\sin^2\theta)\\
+              \cos 4\theta&=1-2\sin^{2}2\theta=1-2\cdot4\sin^2\theta\cdot\cos^2\theta\\
+              &=1-8\sin^2\theta(1-\sin^2\theta)\\
+              &=8\sin^4\theta-8\sin^2\theta+1
+            \end{align*}
+            $$
+
+            したがって，$\mathrm{P}_2(x)=1-2x$，$\mathrm{Q}_2(x)=8x^2-8x+1$ とすると，$n=2$ のとき ($\ast$) は成立する．
+          </ListItem>
+          <ListItem>
+            $n=k(\geqq 2)$ のとき $(\ast)$ が成り立つと仮定する．
+
+            $$
+            \begin{align*}
+              \sin 2(k+1)\theta&=\sin(2k\theta+2\theta)\\
+              &=\sin{2k\theta}\cos 2\theta+\cos{2k\theta}\sin2\theta\\
+              &=k\sin{2\theta}\cdot\mathrm{P}_k(\sin^2\theta)\cdot(1-\sin^2\theta)+\mathrm{Q}_k(\sin^2\theta)\sin2\theta\\
+              \cos 2(k+1)\theta&=\cos(2k\theta+2\theta)\\
+              &=\cos{2k\theta}\cos 2\theta-\sin{2k\theta}\sin2\theta\\
+              &=\mathrm{Q}_k(\sin^2\theta)(1-2\sin^2\theta)-k\sin2\theta\cdot\mathrm{P}_k(\sin^2\theta)\cdot\sin2\theta\\
+              &=\mathrm{Q}_k(\sin^2\theta)(1-2\sin^2\theta)-k(2\sin\theta\cos\theta)^2\cdot\mathrm{P}_k(\sin^2\theta)\\
+              &=\mathrm{Q}_k(\sin^2\theta)(1-2\sin^2\theta)-4k\sin^2\theta(1-\sin^2\theta)\mathrm{P}_k(\sin^2\theta)
+            \end{align*}
+            $$
+
+            したがって
+
+            $$
+            \begin{equation}
+              \left\{\begin{aligned}
+                \mathrm{P}_{k+1}(x)&=\frac{1}{k+1}\left\{k(1-2x)\mathrm{P}_k(x)+\mathrm{Q}_k(x)\right\}\tag{1}\\
+                \mathrm{Q}_{k+1}(x)&=(1-2x)\mathrm{Q}_k(x)-4kx(1-x)\mathrm{P}_k(x)
+              \end{aligned}\right.
+            \end{equation}\tag{2}
+            $$
+
+            とおくと，$\mathrm{P}_{k+1}(x)$ は $k$ 次以下，$\mathrm{Q}_{k+1}(x)$ は $k+1$ 次以下の多項式となる．
+
+            ここで, $\mathrm{P}_k(x)$，$\mathrm{Q}_k(x)$ の最高次の項をそれぞれ $a_{k}x^{k-1}$，$b_{k}x^k$ とおくと(1)式, (2)式より
+
+            $$
+            \begin{equation}
+              \left\{\begin{aligned}
+                a_{k+1}&=\dfrac{1}{k+1}(-2ka_k+b_k)\\
+                b_{k+1}&=-2b_k+4ka_k
+              \end{aligned}\right.\tag{3}
+            \end{equation}
+            $$
+
+            である．このとき，$a_2=-2< 0$，$b_2=8 >0$ である。(3)式より，
+
+            $$
+            \begin{align*}
+              &a_k>0,\ b_k<0\text{ときは}&a_{k+1}<0,\ b_{k+1}>0\\
+              &a_k<0,\ b_k>0\text{ときは}&a_{k+1}>0,\ b_{k+1}<0
+            \end{align*}
+            $$
+
+            となる．したがって，$a_{k+1}\neq 0$，$b_{k+1}\neq 0$ であるから(1)式，(2)式より,
+
+            $\mathrm{P}_{k+1}(x)$ は $x$ の $k$ 次多項式，$\mathrm{Q}_{k+1}(x)$ は $x$ の $k+1$ 次多項式となり，($\ast$) は成立する．
+          </ListItem>
+          以上，(I), (II)より，2以上の全ての自然数 $n$ に対して ($\ast$) は成立する．
+        </List>
+      </ListItem>
+      <ListItem>
+        $1/\alpha_k=\sin^2\left(k\pi/2n\right)\ (k=1, 2, \cdots, n-1)$ は互いに相異なる $n-1$ 個の数である．
+
+        $\theta_k=k\pi/2n$ とおくと，$\sin 2n\theta_k=0$ であり，$0< \theta_k< \pi/2$ より，$\sin 2\theta_k\neq 0$ となる．
+
+        よって(1)より
+
+        $$
+        \begin{align*}
+          \sin 2n\theta_k&=n\sin{2\theta_k}\mathrm{P}_n(\sin^2\theta_k)\\
+          \therefore 0&=n\sin{2\theta_k}\mathrm{P}_n(\sin^2\theta_k)\\
+          \therefore \mathrm{P}_n(\sin^2\theta_k)&=0
+        \end{align*}
+        $$
+
+        となる．したがって，$n-1$ 次方程式 $\mathrm{P}_n(x)$ は，
+
+        $$
+        \begin{equation*}
+          \sin^2\theta_k \left(=\dfrac{1}{\alpha_k}\right)\ (k=1, 2, \cdots, n-1)
+        \end{equation*}
+        $$
+
+        を解にもつ．よって，$A$ を定数として，
+
+        $$
+        \begin{equation*}
+          \mathrm{P}_n(x)=A(1-\alpha_{1}x)(1-\alpha_{2}x)\cdots(1-\alpha_{n-1}x)
+        \end{equation*}
+        $$
+
+        とおける．
+
+        また，$\mathrm{P}_n(x), \mathrm{Q}_n(x)$ の定数項をそれぞれ $c_n, d_n$ とすると，(1)式，(2)式より，
+
+        $$
+        \begin{equation*}
+          c_{n+1}=\dfrac{1}{n+1}(nc_n+d_n),\ d_{n+1}=d_n
+        \end{equation*}
+        $$
+
+        であり，$c_2=d_2=1$ であるから，帰納的に2以上の全ての整数 $n$ に対して $c_n=d_n=1$
+
+        したがって $A=1$ である．
+
+        以上から，$\mathrm{P}_n(x)=(1-\alpha_{1}x)(1-\alpha_{2}x)\cdots(1-\alpha_{n-1}x)$ となる．
+      </ListItem>
+      <ListItem>
+        $\mathrm{P}_n(x)=1-(\alpha_1+\alpha_2+\cdots+\alpha_{n-1})x+(2次以上の多項式)$
+
+        よって $e_n=\displaystyle\sum_{k=1}^{n-1}\alpha_k$ とおくと，
+
+        $$
+        \begin{equation*}
+          \mathrm{P}_n(x)=1-e_{n}x+(\text{2次以上の多項式})
+        \end{equation*}
+        $$
+
+        また，$\mathrm{Q}_n(x)$ の定数項は1であるから，
+
+        $$
+        \begin{equation*}
+          \mathrm{Q}_n(x)=1+f_{n}x+(\text{2次以上の多項式})
+        \end{equation*}
+        $$
+
+        と表せる．(1)式より
+
+        $$
+        \begin{align}
+          (n+1)\mathrm{P}_{n+1}(x)=&n(1-2x)\mathrm{P}_{n}(x)+\mathrm{Q}_{n}(x)\nonumber\\
+          =&n(1-2x)\left\{1-e_{n}x+(\text{2次以上の多項式})\right\}\nonumber\\
+          &+1+f_{n}x+(\text{2次以上の多項式})\nonumber\\
+          =&n+1+(-2n-ne_n+f_n)x+(\text{2次以上の多項式})\nonumber\\
+          \therefore -(n+1)e_{n+1}=&-2n-ne_n+f_n\tag{4}
+        \end{align}
+        $$
+
+        さらに(2)式より
+
+        $$
+        \begin{align}
+          \mathrm{Q}_{n+1}(x)=&(1-2x)\left\{1+f_{n}x+(\text{2次以上の多項式})\right\}\nonumber\\
+          &-4nx(1-x)\left\{1-e_{n}x+(\text{2次以上の多項式})\right\}\nonumber\\
+          =&1+(-2+f_n-4n)x+(\text{2次以上の多項式})\nonumber\\
+          \therefore f_{n+1}=&-2+f_n-4n=f_n-2(2n+1)\tag{5}
+        \end{align}
+        $$
+
+        (1)より，$f_2=-8$ であるから，$n\geqq 3$ において
+
+        $$
+        \begin{equation*}
+          f_n=f_2+\displaystyle\sum_{l=2}^{n-2}\left\{-2(2l+1)\right\}=-2n^2
+        \end{equation*}
+        $$
+
+        これは $n=2$ のときも正しい．したがって(3)式より，
+
+        $$
+        \begin{align*}
+          -(n+1)e_{n+1}&=-ne_n-2n^2-2n\\
+          \therefore (n+1)e_{n+1}&=ne_n+2n(n+1)
+        \end{align*}
+        $$
+
+        (1)より $e_2=2$ であるから，$n\geqq 3$ において
+
+        $$
+        \begin{align*}
+          ne_n&=2e_2+\displaystyle\sum_{l=2}^{n-1}2l(l+1)\\
+          &=4+\frac{2}{3}\left\{(n-1)n(n+1)-6\right\}\\
+          &=\frac{2}{3}(n-1)n(n+1)\\
+          \therefore e_n&=\frac{2}{3}(n-1)(n+1)=\frac{1}{3}(2n^2-2)
+        \end{align*}
+        $$
+
+        これは $n=2$ のときも正しい．
+
+        以上から $\displaystyle\sum_{k=1}^{n-1}\alpha_k=e_n=\frac{2n^2-2}{3}$ が成り立つ．
+
+        ※ (1)式, (2)式の辺々を $x$ で微分して，$c_n=d_n=1$ より
+
+        $$
+        \begin{equation}
+          \left\{\begin{aligned}
+            \mathrm{P}_{n+1}'(0)=\frac{-2u}{n+1}+\frac{n}{n+1}\mathrm{P}_{n}'(0)+\frac{1}{n+1}\mathrm{Q}_{n}'(0)\\
+            \mathrm{Q}_{n+1}'(0)=-2+\mathrm{Q}_{n}'(0)-4n
+          \end{aligned}\right.\tag{6}
+        \end{equation}
+        $$
+
+        $\mathrm{Q}_n'(0)=-2n^2$ より $\displaystyle\sum_{k=1}^{n-1}\alpha_k=-\mathrm{P}_n'(0)=\frac{2n^2-2}{3}$
+      </ListItem>
+    </List>
+
+  </TabItem>
+</Tabs>

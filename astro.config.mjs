@@ -30,7 +30,7 @@ export default defineConfig({
         },
       },
       editLink: {
-        baseUrl: 'https://github.com/kage1020/math-tex-book/edit/main/',
+        baseUrl: 'https://github.com/kage1020/MathTeXBook/edit/main/',
       },
       sidebar: [
         {

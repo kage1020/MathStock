@@ -11,7 +11,11 @@ export const List = ({
 }) => {
   if (type === 'none') return <ul className='relative'>{children}</ul>
 
-  return <ol className={cn('relative group list-none', type)}>{children}</ol>
+  return (
+    <ol className={cn('relative group list-none [counter-reset:count]', type)}>
+      {children}
+    </ol>
+  )
 }
 
 export const ListItem = ({ children }: { children: React.ReactNode }) => {

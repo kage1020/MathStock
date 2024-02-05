@@ -6,13 +6,16 @@ export const Image = ({
   caption,
 }: {
   className?: string
-  src: string
+  src: string[]
   caption: string
 }) => {
   return (
-    <figure className={cn('mx-auto', className)}>
-      <img src={src} alt={caption} className='w-full' />
+    <picture className={cn('mx-auto', className)}>
+      {src.length > 1 && (
+        <source srcSet={src[1]} media='(prefers-color-scheme: dark)' />
+      )}
+      <img src={src[0]} alt={caption} className='w-full' />
       <figcaption className='text-center'>{caption}</figcaption>
-    </figure>
+    </picture>
   )
 }

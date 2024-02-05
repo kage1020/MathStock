@@ -79,3 +79,9 @@
 .tab:where(.astro-esqgolmp) {
   margin-bottom: 0 !important;
 }
+
+.sl-markdown-content
+  :is(img, picture, video, canvas, svg, iframe):not(:where(.not-content *)) {
+  max-width: none;
+  height: inherit;
+}

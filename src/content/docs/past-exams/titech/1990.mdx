@@ -14,7 +14,7 @@ import { List, ListItem } from '@/components/List'
       $x$，$y$，$z$，$w$ を正数とする．任意の正の整数 $m$，$n$ に対して，
 
       $$
-        \left(x^{\frac{1}{m}}+y^{\frac{1}{m}}\right)^n+\left(z^{\frac{1}{m}}+w^{\frac{1}{m}}\right)^n=\left\{\left(x^{\frac{n}{m}}+z^{\frac{n}{m}}\right)^{\frac{1}{n}}+\left(y^{\frac{n}{m}}+w^{\frac{n}{m}}\right)^{\frac{1}{n}}\right\}^n
+        \left(x^\frac{1}{m}+y^\frac{1}{m}\right)^n+\left(z^\frac{1}{m}+w^\frac{1}{m}\right)^n=\left\{\left(x^\frac{n}{m}+z^\frac{n}{m}\right)^\frac{1}{n}+\left(y^\frac{n}{m}+w^\frac{n}{m}\right)^\frac{1}{n}\right\}^n
       $$
 
       が成り立つための必要十分条件を求めよ。
@@ -25,15 +25,15 @@ import { List, ListItem } from '@/components/List'
     $x^{1/m}=X$，$y^{1/m}=Y$，$z^{1/m}=Z$，$w^{1/m}=W$ とおくと，
 
     $$
-    (X+Y)^n+(Z+W)^n=\left\{\left(X^n+Z^n\right)^{\frac{1}{n}}+\left(Y^n+W^n\right)^{\frac{1}{n}}\right\}^n\tag{1}
+    (X+Y)^n+(Z+W)^n=\left\{\left(X^n+Z^n\right)^\frac{1}{n}+\left(Y^n+W^n\right)^\frac{1}{n}\right\}^n\tag{1}
     $$
 
     となる。(1)式が任意の正の整数で成立するならば，$n=2$ のときも(1)式が成立することが必要である．すなわち,
 
     $$
     \begin{align}
-      (X+Y)^2+(Z+W)^2&=\left\{(X^2+Z^2)^{\frac{1}{2}}+(Y^2+W^2)^{\frac{1}{2}}\right\}^2\nonumber\\
-      XY+ZW&=\sqrt{X^2+Z^2}\sqrt{Y^2+W^2}\nonumber\\
+      (X+Y)^2+(Z+W)^2&=\left\{(X^2+Z^2)^\frac{1}{2}+(Y^2+W^2)^\frac{1}{2}\right\}^2\nonumber\\
+      XY+ZW&= \sqrt{X^2+Z^2} \sqrt{Y^2+W^2} \nonumber\\
       (XY+ZW)^2&=(X^2+Z^2)(Y^2+W^2)\nonumber\\
       (XW-YZ)^2&=0\nonumber\\
       \therefore XW&=YZ\tag{2}
@@ -45,12 +45,12 @@ import { List, ListItem } from '@/components/List'
     逆に(2)式のとき，正の実数 $k$ を用いて $Z=kX$，$W=kY$ とおくことができ，このとき，
 
     $$
-    \begin{align*}
-      \left(\text{(1)の左辺}\right)&=(X+Y)^n+k^n(X+Y)^n=(1+k^n)(X+Y)^n\\
-      \left(\text{(1)の右辺}\right)&=\left[\left\{(1+k^n)X^n\right\}^{\frac{1}{n}}+\left\{(1+k^n)Y^n\right\}^{\frac{1}{n}}\right]^n\\
-      &=\left\{(1+k^n)^{\frac{1}{n}}(X+Y)\right\}^n\\
-      &=(1+k^n)(X+Y)^n
-    \end{align*}
+    \begin{align}
+      (X+Y)^n+(Z+W)^n&=(X+Y)^n+k^n(X+Y)^n=(1+k^n)(X+Y)^n\nonumber\\
+      \left\{\left(X^n+Z^n\right)^\frac{1}{n}+\left(Y^n+W^n\right)^\frac{1}{n}\right\}^n&=\left[\left\{(1+k^n)X^n\right\}^\frac{1}{n}+\left\{(1+k^n)Y^n\right\}^\frac{1}{n}\right]^n\nonumber\\
+      &=\left\{(1+k^n)^\frac{1}{n}(X+Y)\right\}^n\nonumber\\
+      &=(1+k^n)(X+Y)^n\nonumber
+    \end{align}
     $$
 
     したがって(1)式は任意の正の整数 $n$ に対して成立する．
@@ -68,10 +68,10 @@ import { List, ListItem } from '@/components/List'
           $n-1$ 次多項式 $\mathrm{P}_n(x)$ と $n$ 次多項式 $\mathrm{Q}_n(x)$ ですべての実数 $\theta$ に対して
 
           $$
-          \begin{align*}
-              \sin(2n\theta)&=n\sin(2\theta)\mathrm{P}_n(\sin^2\theta)\\
-              \cos(2n\theta)&=\mathrm{Q}_n(\sin^2\theta)
-          \end{align*}
+          \begin{align}
+              \sin(2n\theta)&=n\sin(2\theta)\mathrm{P}_n(\sin^2\theta)\nonumber\\
+              \cos(2n\theta)&=\mathrm{Q}_n(\sin^2\theta)\nonumber
+          \end{align}
           $$
 
           を満たすものが存在することを帰納法を用いて示せ．
@@ -80,7 +80,7 @@ import { List, ListItem } from '@/components/List'
           $k=1, 2, \ldots, n-1$ に対して，$\alpha_k=\left(\sin\dfrac{k\pi}{2n}\right)^{-2}$ とおくと，
 
           $$
-            \mathrm{P}_n(x)=(1-{\alpha_1}x)(1-{\alpha_2}x)\cdots(1-{\alpha_{n-1}}x)
+            \mathrm{P}_n(x)=(1-\alpha_1x)(1-\alpha_2x)\cdots(1-\alpha_{n-1}x)
           $$
 
           となることを示せ。
@@ -136,12 +136,10 @@ import { List, ListItem } from '@/components/List'
             したがって
 
             $$
-            \begin{equation}
-              \left\{\begin{aligned}
+            \begin{align}
                 \mathrm{P}_{k+1}(x)&=\frac{1}{k+1}\left\{k(1-2x)\mathrm{P}_k(x)+\mathrm{Q}_k(x)\right\}\tag{1}\\
-                \mathrm{Q}_{k+1}(x)&=(1-2x)\mathrm{Q}_k(x)-4kx(1-x)\mathrm{P}_k(x)
-              \end{aligned}\right.
-            \end{equation}\tag{2}
+                \mathrm{Q}_{k+1}(x)&=(1-2x)\mathrm{Q}_k(x)-4kx(1-x)\mathrm{P}_k(x)\tag{2}
+            \end{align}
             $$
 
             とおくと，$\mathrm{P}_{k+1}(x)$ は $k$ 次以下，$\mathrm{Q}_{k+1}(x)$ は $k+1$ 次以下の多項式となる．

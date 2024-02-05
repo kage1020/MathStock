@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint --ext .ts,.tsx,.astro .",
+    "lint": "eslint --ext .ts,.tsx,.astro src",
     "format": "prettier --write ."
   },
   "dependencies": {

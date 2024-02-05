@@ -15,5 +15,6 @@
   },
   "[mdx]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "latex-workshop.latex.autoBuild.run": "never"
 }

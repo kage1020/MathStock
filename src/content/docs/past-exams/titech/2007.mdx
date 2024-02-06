@@ -1,0 +1,80 @@
+---
+title: 2007年
+description: 東京科学大学(東京工業大学)の過去問 2007年
+tableOfContents: false
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components'
+import { Card } from '@/components/Card'
+import { List, ListItem } from '@/components/List'
+import { Image } from '@/components/Image'
+
+<Tabs>
+  <TabItem label="問題">
+    <Card>
+      $p$ を素数，$n$ を0以上の整数とする．
+
+      <List type="decimal">
+        <ListItem>
+          $m$ は整数で $0\leqq m\leqq n$ とする．1から $p^{n+1}$ までの整数の中で，$p^m$ で割り切れ，$p^{m+1}$ で割り切れないものの個数を求めよ．
+        </ListItem>
+        <ListItem>
+          1から $p^{n+1}$ までの2つの整数 $x,\ y$ に対し，その積 $xy$ が $p^{n+1}$ で割り切れるような組 $(x,\ y)$ の個数を求めよ．
+        </ListItem>
+      </List>
+    </Card>
+
+  </TabItem>
+  <TabItem label="解答">
+    1から $p^{n+1}$ までの整数で，$p^m$ で割り切れるものの個数を $a_m$ とする．
+
+    $0\leqq m\leqq n+1$ を満たす $m$ に対して，$a_m=\dfrac{p^{n+1}}{p^m}=p^{n+1-m}$ である．
+
+    <List type="decimal">
+      <ListItem>
+        $p^{m+1}$ で割り切れる整数は $p^m$ でも割り切れる．よって，1から $p^{n+1}$ までの整数の中で，$p^m$ で割り切れ，$p^{m+1}$ で割り切れないものの個数は，
+
+        $$
+        \begin{equation*}
+            a_m-a_{m+1}=p^{n+1-m}-p^{n-m}=(p-1)p^{n-m}
+        \end{equation*}
+        $$
+      </ListItem>
+      <ListItem>
+        １から $p^{n+1}$ までの2つの整数 $x,\ y$ に対し，その積 $xy$ が $p^{n+1}$ で割り切れるのは，
+
+        <List type="lower-roman">
+          <ListItem>
+            $x$ は $p^{m}$ で割り切れるが $p^{m+1}$ で割り切れず，$y$ は $p^{n+1-m}$ で割り切れる．($m=0,\ 1,\ \cdots,\ n$)
+          </ListItem>
+          <ListItem>
+            $x$ は $p^{n+1}$ で割り切れる．このとき，$y$ は任意
+          </ListItem>
+        </List>
+
+        のいずれかとなる．
+
+        $0\leqq m\leqq n$ を満たす $m$ に対して，(i)を満たす $x$ は $(p-1)p^{n-m}$ 個あり，それぞれに対して，$y$ は $a_{n+1-m}$ 個ある．したがって，(i)を満たす組 $(x,\ y)$ の総数は，
+
+        $$
+        \begin{equation*}
+            \sum_{m=0}^{n}(p-1)p^{n-m}\cdot a_{n+1-m}=\sum_{m=0}^{n}(p-1)p^{n-m}\cdot p^m=\sum_{m=0}^{n}(p-1)p^n=(n+1)(p-1)p^n
+        \end{equation*}
+        $$
+
+        (ii)を満たす $x$ は，$x=p^{n+1}$ の1個であるから，組 $(x,\ y)$ の総数は $1\cdot p^{n+1}=p^{n+1}$
+
+        以上から，求める個数は，
+
+        $$
+        \begin{equation*}
+            (n+1)(p-1)p^n+p^{n+1}=\Big\{(n+2)p-(n+1)\Big\}p^n
+        \end{equation*}
+        $$
+
+        である．
+      </ListItem>
+    </List>
+
+  </TabItem>
+</Tabs>

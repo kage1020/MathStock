@@ -1,0 +1,105 @@
+\documentclass[a4paper]{ltjsarticle}
+
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx,hidelinks,pdfusetitle]{hyperref}
+\hypersetup{
+    colorlinks=false,
+    bookmarksnumbered=true,
+    pdfborder={0 0 0},
+    bookmarkstype=toc
+}
+\usepackage[nobreak]{cite}
+\usepackage{pxjahyper}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric, shapes.misc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+% ====================
+
+\begin{itembox}[l]{東京工業大学 2003年 後期}
+    $m$ を0以上の整数とする．直線 $2x+3y=m$ 上の点 $(x,\ y)$ で，$x$，$y$ がともに0以上の整数であるものの個数を $N(m)$ とする．
+
+    \begin{enumerate}[label=(\arabic*)]
+        \item $N(m+6)=N(m)+1$ を証明せよ．
+        \item $N(m)=1-m+\qty[\dfrac{m}{2}]+\qty[\dfrac{2m}{3}]$ を証明せよ．ただし，$[a]$ は $a$ 以下の最大の整数を表すものとする．
+    \end{enumerate}
+\end{itembox}
+
+\begin{enumerate}[label=(\arabic*)]
+    \item
+          \begin{equation}
+              2x+3y=m\label{eq:1}
+          \end{equation}
+
+          $(x,\ y)=(-m,\ m)$ は\eqref{eq:1}式を満たすから，
+
+          \begin{equation}
+              2(-m)+3m=m\label{eq:2}
+          \end{equation}
+
+          \eqref{eq:1}式, \eqref{eq:2}式の辺々を引いて，
+
+          \begin{equation*}
+              2(x+m)+3(y-m)=0 \quad \therefore 2(x+m)=-3(y-m)
+          \end{equation*}
+
+          2と3は互いに素であるから，$t$ を整数として
+
+          \begin{equation*}
+              x+m=3t, y-m=-2t \quad \therefore x=-m+3t, y=m-2t
+          \end{equation*}
+
+          $x\geqq 0$，$y\geqq 0$ より $-m+3t\geqq 0$，$m-2t\geqq 0$
+
+          \begin{equation}
+              \therefore \frac{m}{3}\leqq t\leqq \frac{m}{2}\label{eq:3}
+          \end{equation}
+
+          \eqref{eq:3}式を満たす整数 $t$ の個数が $N(m)$ である．\eqref{eq:3}式の $m$ を $m+6$ として，
+
+          \begin{equation*}
+              \frac{m}{3}+2\leqq t\leqq \frac{m}{2}+3
+          \end{equation*}
+
+          $m/3+2\leqq t\leqq m/2+3$ を満たす $t$ の個数は\eqref{eq:3}式を満たす $t$ の個数，すなわち，$N(m)$ に等しく，$m/2+2<t\leqq m/2+3$ を満たす $t$ はちょうど1個である．したがって，
+
+          \begin{equation*}
+              N(m+6)=N(m)+1
+          \end{equation*}
+
+          が成り立つ．
+
+    \item \eqref{eq:3}式より，$N(0)=1$，$N(1)=0$，$N(2)=1$，$N(3)=1$，$N(4)=1$，$N(5)=1$
+
+          ここで，$X(m)=1-m+\qty[m/2]+\qty[2m/3]$ とおくと，
+
+          \begin{equation*}
+              X(0)=1,\ X(1)=0,\ X(2)=1,\ X(3)=1,\ X(4)=1,\ x(5)=1
+          \end{equation*}
+
+          よって，$m=0,\ 1,\ 2,\ 3,\ 4,\ 5$ のとき $N(m)=X(m)$ が成り立つ．
+
+          また，ある $m$ に対して，$N(m)=X(m)$ が成り立つとすると，
+
+          \begin{align*}
+              X(m+6) & =1-(m+6)+\qty[\frac{m}{2}+3]+\qty[\frac{2m}{3}+4] \\
+                     & =1-(m+6)+\qty[\frac{m}{2}]+3+\qty[\frac{3m}{2}]+4 \\
+                     & =2-m+\qty[\frac{m}{2}]+\qty[\frac{2m}{3}]         \\
+                     & =X(m)+1
+          \end{align*}
+
+          (1)の結果と合わせて $N(m+6)=X(m+6)$ が成り立つ．
+
+          以上から，0以上の全ての $m$ に対して $N(m)=X(m)$ が成り立つ．
+\end{enumerate}
+
+% ====================
+
+\end{document}

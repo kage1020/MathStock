@@ -11,7 +11,7 @@ export const Card = ({
   return (
     <SCard
       className={cn(
-        'bg-[--sl-color-gray-6] border border-[--sl-color-gray-4]',
+        'bg-[--sl-color-gray-6] border border-[--sl-color-gray-4] overflow-x-auto',
         className,
       )}
     >

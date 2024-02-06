@@ -1,0 +1,89 @@
+---
+title: 2009年
+description: 東京大学の過去問 2009年
+tableOfContents: false
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components'
+import { Card } from '@/components/Card'
+import { List, ListItem } from '@/components/List'
+import { Image } from '@/components/Image'
+
+<Tabs>
+  <TabItem label="問題">
+    <Card>
+      座標平面において原点を中心とする半径2の円を $C_1$ とし，点 $(1,\ 0)$ を中心とする半径1の円を $C_2$ とする．また，点 $(a,\ b)$ を中心とする半径 $t$ の円 $C_3$ が， $C_1$ に内接し，かつ $C_2$ に外接すると仮定する．ただし， $b$ は正の実数とする．
+
+      <List type="decimal">
+        <ListItem>
+          $a,\ b$ を $t$ を用いて表せ．また，$t$ が取り得る値の範囲を求めよ．
+        </ListItem>
+        <ListItem>
+          $t$ が(1)で求めた範囲を動くとき， $b$ の最大値を求めよ．
+        </ListItem>
+      </List>
+    </Card>
+
+  </TabItem>
+  <TabItem label="解答">
+    <List>
+      <ListItem>
+
+        {/* TODO: create image */}
+        <Image src={["/comming-soon.png"]} />
+
+        $C_2$ の中心を $O_2$，$C_3$ の中心を $O_3$ とし， $C_1$ と $C_3$ の接点を $A$，$C_3$ の接点を $B$ とする．
+
+        $O$，$O_3$ および $A$ は一直線上にあるので，
+
+        $$
+        \begin{align}
+            \text{OO}_3             & =2-t\tag{1}     \\
+            \therefore\quad a^2+b^2 & =(2-t)^2\tag{2}
+        \end{align}
+        $$
+
+        また，$O_2$，$B$ および $O_3$ は一直線上にあるので，
+
+        $$
+        \begin{align}
+            \text{O}_2\text{O}_3        & =t+1\tag{3}     \\
+            \therefore\quad (a-1)^2+b^2 & =(t+1)^2\tag{4}
+        \end{align}
+        $$
+
+        (2)$-$(4) より，
+
+        $$
+        \begin{align*}
+            2a-1              & =-6t+3 \\
+            \therefore\quad a & =-3t+2
+        \end{align*}
+        $$
+
+        上式を(2)に代入すると，
+
+        $$
+        \begin{align}
+            b^2=(2-t)^2-(-3t+2)^2 & =-8t^2+8t\tag{5}     \\
+            \therefore\quad b     & =\sqrt{-8t^2+8t}\nonumber
+        \end{align}
+        $$
+
+        (1)，(3)および(5)がすべて正になる条件より，$0< t < 1$
+      </ListItem>
+      <ListItem>
+        $f(t)=b^2$ を考える．
+
+        $$
+        \begin{equation*}
+            f(t)=-8t^2+8t=-8\left(t-\frac{1}{2}\right)^2+2
+        \end{equation*}
+        $$
+
+        $0 < t < 1$ より，$f(t)$ は $t=\dfrac{1}{2}$ で最大値2をとる．このとき，$b>0$ より $b$ も最大値を取る．よって， $b$ の最大値は $\sqrt{2}$ である．
+      </ListItem>
+    </List>
+
+  </TabItem>
+</Tabs>

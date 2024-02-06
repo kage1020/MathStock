@@ -1,0 +1,78 @@
+\documentclass[a4paper]{ltjsarticle}
+
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx,hidelinks,pdfusetitle]{hyperref}
+\hypersetup{
+    colorlinks=false,
+    bookmarksnumbered=true,
+    pdfborder={0 0 0},
+    bookmarkstype=toc
+}
+\usepackage[nobreak]{cite}
+\usepackage{pxjahyper}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric, shapes.misc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+% ====================
+
+\begin{itembox}[l]{東京工業大学 1984年}
+    自然数 $a,\ b,\ c$ が $3a=b^3,\ 5a=c^2$ を満たし，$d^6$ が $a$ を割り切るような自然数 $d$ は $d=1$ に限るとする．
+
+    \begin{enumerate}[label=(\arabic*)]
+        \item $a$ は3と5で割り切れることを示せ．
+
+        \item $a$ の素因数は3と5以外にないことを示せ．
+
+        \item $a$ を求めよ．
+    \end{enumerate}
+\end{itembox}
+
+\begin{enumerate}[label=(\arabic*)]
+    \item
+          \begin{align}
+              3a & =b^3\label{eq:1} \\
+              5a & =c^2\label{eq:2}
+          \end{align}
+
+          \eqref{eq:1}式より，$b^3$ は3で割り切れる．3は素数であるから，$b$ は3で割り切れる．よって，\eqref{eq:1}式の右辺は $3^3$ を因数にもつから，$a$ は $3^3$ で割り切れる．
+
+          同様に，\eqref{eq:2}式より，$c$ は5で割り切れる．よって，\eqref{eq:2}式の右辺は $5^2$ を因数にもつから，$a$ は5で割り切れる．
+
+          以上から，$a$ は3と5で割り切れる．
+
+    \item $a$ が3と5以外の素因数 $p$ をもつとし，$a$ を素因数分解したときの $p$ の指数を $m$ とする．
+
+          \eqref{eq:1}式より，$b$ は $p$ を素因数にもつから，$b$ を素因数分解したときの$p$ の指数を $l$ とすると，$m=3l$ となる．また，\eqref{eq:2}式より，$c$ も $p$ を素因数にもつから，$c$ を素因数分解したときの $p$ の指数を $k$ とすると，$m=2k$ となる．
+
+          よって，$m$ は2，3で割り切れるから，$m$ は6の倍数となる．
+
+          したがって，$a$ は $p^6$ で割り切れるが，これは $d^6$ が $a$ を割り切るような自然数 $d$ は $d=1$ に限ることに反する．
+
+          以上から，$a$ の素因数は3と5以外にない．
+
+    \item (1),\ (2)から，
+
+          \begin{equation*}
+              a=3^{x}5^{y}\quad (x,\ y\text{は5以下の自然数})
+          \end{equation*}
+
+          と表され，\eqref{eq:1}式より $x+1,\ y$ はともに3で割り切れ，\eqref{eq:2}式より $x,\ y+1$ はともに2で割り切れるから，
+
+          \begin{equation*}
+              x=2, y=3
+          \end{equation*}
+
+          となる．よって，$a=3^2\cdot 5^3=1125$
+\end{enumerate}
+
+% ====================
+
+\end{document}

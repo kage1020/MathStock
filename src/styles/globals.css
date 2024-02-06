@@ -85,3 +85,7 @@
   max-width: none;
   height: inherit;
 }
+
+starlight-tabs section {
+  overflow-x: auto;
+}

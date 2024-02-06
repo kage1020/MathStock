@@ -1,0 +1,80 @@
+\documentclass[a4paper]{ltjsarticle}
+
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx,hidelinks,pdfusetitle]{hyperref}
+\hypersetup{
+    colorlinks=false,
+    bookmarksnumbered=true,
+    pdfborder={0 0 0},
+    bookmarkstype=toc
+}
+\usepackage[nobreak]{cite}
+\usepackage{pxjahyper}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric, shapes.misc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+% ====================
+
+\begin{itembox}[l]{東京大学 2009年 文科 第1問}
+    座標平面において原点を中心とする半径2の円を $C_1$ とし，点 $(1,\ 0)$ を中心とする半径1の円を $C_2$ とする．また，点 $(a,\ b)$ を中心とする半径 $t$ の円 $C_3$ が， $C_1$ に内接し，かつ $C_2$ に外接すると仮定する．ただし， $b$ は正の実数とする．
+
+    \begin{enumerate}[label=(\arabic*)]
+        \item $a,\ b$ を $t$ を用いて表せ．また，$t$ が取り得る値の範囲を求めよ．
+
+        \item $t$ が(1)で求めた範囲を動くとき， $b$ の最大値を求めよ．
+    \end{enumerate}
+\end{itembox}
+
+\begin{enumerate}[label=(\arabic*)]
+    \item $C_2$ の中心を $O_2$，$C_3$ の中心を $O_3$ とし， $C_1$ と $C_3$ の接点を $A$，$C_3$ の接点を $B$ とする．
+
+          $O$，$O_3$ および $A$ は一直線上にあるので，
+
+          \begin{align}
+              \text{OO}_3             & =2-t\label{eq:1}     \\
+              \therefore\quad a^2+b^2 & =(2-t)^2\label{eq:2}
+          \end{align}
+
+          また，$O_2$，$B$ および $O_3$ は一直線上にあるので，
+
+          \begin{align}
+              \text{O}_2\text{O}_3        & =t+1\label{eq:3}     \\
+              \therefore\quad (a-1)^2+b^2 & =(t+1)^2\label{eq:4}
+          \end{align}
+
+          \eqref{eq:2}$-$\eqref{eq:4} より，
+
+          \begin{align*}
+              2a-1              & =-6t+3 \\
+              \therefore\quad a & =-3t+2
+          \end{align*}
+
+          上式を\eqref{eq:2}に代入すると，
+
+          \begin{align}
+              b^2=(2-t)^2-(-3t+2)^2 & =-8t^2+8t\label{eq:5}     \\
+              \therefore\quad b     & =\sqrt{-8t^2+8t}\nonumber
+          \end{align}
+
+          \eqref{eq:1}，\eqref{eq:3}および\eqref{eq:5}がすべて正になる条件より，$0<t<1$
+
+    \item $f(t)=b^2$ を考える．
+
+          \begin{equation*}
+              f(t)=-8t^2+8t=-8\left(t-\frac{1}{2}\right)^2+2
+          \end{equation*}
+
+          $0<t<1$ より，$f(t)$ は $t=\dfrac{1}{2}$ で最大値2をとる．このとき，$b>0$ より $b$ も最大値を取る．よって， $b$ の最大値は $\sqrt{2}$ である．
+\end{enumerate}
+
+% ====================
+
+\end{document}

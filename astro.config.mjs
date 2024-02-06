@@ -38,7 +38,8 @@ export default defineConfig({
           items: [
             {
               label: '東京大学',
-              link: '/past-exams/u-tokyo',
+              collapsed: true,
+              autogenerate: { directory: 'past-exams/u-tokyo' },
             },
             {
               label: '東京科学大学(東京工業大学)',

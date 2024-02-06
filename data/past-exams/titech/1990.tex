@@ -39,7 +39,7 @@ $x^{1/m}=X$，$y^{1/m}=Y$，$z^{1/m}=Z$，$w^{1/m}=W$ とおくと，
     (X+Y)^n+(Z+W)^n=\left\{\left(X^n+Z^n\right)^\frac{1}{n}+\left(Y^n+W^n\right)^\frac{1}{n}\right\}^n\label{eq:1}
 \end{equation}
 
-となる。\eqref{eq:1}式が任意の正の整数で成立するならば，$n=2$ のときも\eqref{eq:1}式が成立することが必要である．すなわち,
+となる．\eqref{eq:1}式が任意の正の整数で成立するならば，$n=2$ のときも\eqref{eq:1}式が成立することが必要である．すなわち,
 
 \begin{align}
     (X+Y)^2+(Z+W)^2 & =\left\{(X^2+Z^2)^\frac{1}{2}+(Y^2+W^2)^\frac{1}{2}\right\}^2\nonumber \\
@@ -149,7 +149,7 @@ $x^{1/m}=X$，$y^{1/m}=Y$，$z^{1/m}=Z$，$w^{1/m}=W$ とおくと，
 
                     となる．したがって，$a_{k+1}\neq 0$，$b_{k+1}\neq 0$ であるから\eqref{eq:1}式, \eqref{eq:2}式より,
 
-                    $\mathrm{P}_{k+1}(x)$ は $x$ の $k$ 次多項式，$\mathrm{Q}_{k+1}(x)$ は $x$ の $k+1$ 次多項式となり，($\ast$) は成立する。
+                    $\mathrm{P}_{k+1}(x)$ は $x$ の $k$ 次多項式，$\mathrm{Q}_{k+1}(x)$ は $x$ の $k+1$ 次多項式となり，($\ast$) は成立する．
           \end{enumerate}
 
           以上，(I), (II)より，2以上の全ての自然数 $n$ に対して ($\ast$) は成立する．
@@ -254,13 +254,15 @@ $x^{1/m}=X$，$y^{1/m}=Y$，$z^{1/m}=Z$，$w^{1/m}=W$ とおくと，
           ※\eqref{eq:1}式, \eqref{eq:2}式の辺々を $x$ で微分して，$c_n=d_n=1$ より
 
           \begin{equation}
-              \begin{dcases}
-                  \mathrm{P}_{n+1}'(0)=\frac{-2u}{n+1}+\frac{n}{n+1}\mathrm{P}_{n}'(0)+\frac{1}{n+1}\mathrm{Q}_{n}'(0) \\
-                  \mathrm{Q}_{n+1}'(0)=-2+\mathrm{Q}_{n}'(0)-4n
-              \end{dcases}\label{eq:6}
+              \left\{\begin{aligned}
+                  \mathrm{P}_{n+1}'(0) & =\frac{-2u}{n+1}+\frac{n}{n+1}\mathrm{P}_{n}'(0)+\frac{1}{n+1}\mathrm{Q}_{n}'(0) \\
+                  \mathrm{Q}_{n+1}'(0) & =-2+\mathrm{Q}_{n}'(0)-4n
+              \end{aligned}\right.\label{eq:6}
           \end{equation}
 
           $\mathrm{Q}_n'(0)=-2n^2$ より $\displaystyle\sum_{k=1}^{n-1}\alpha_k=-\mathrm{P}_n'(0)=\frac{2n^2-2}{3}$
 \end{enumerate}
+
+% ====================
 
 \end{document}

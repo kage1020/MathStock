@@ -1,0 +1,80 @@
+---
+title: 1997年
+description: 東京科学大学(東京工業大学)の過去問 1997年
+tableOfContents: false
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components'
+import { Card } from '@/components/Card'
+import { List, ListItem } from '@/components/List'
+import { Image } from '@/components/Image'
+
+<Tabs>
+<TabItem label="問題">
+  <Card>
+    $a^{2}x^{2}+b^{2}y^{2}\leqq 1$ を満たす $(x,\ y)$ がすべて $a(x-1)+b(y-1)\leqq 0$ を満たすような $(a,\ b)$ の範囲を求め，図示せよ．
+  </Card>
+</TabItem>
+<TabItem label="解答">
+  $X=ax$, $Y=by$ とおくと，$a^{2}x^{2}+b^{2}y^{2}\leqq 0$ より，
+
+$$
+\begin{equation}
+    X^2+Y^2\leqq 1\tag{1}
+\end{equation}
+$$
+
+また，$a(x-1)+b(y-1)\leqq 0$ より
+
+$$
+\begin{equation}
+    X+Y\leqq a+b\tag{2}
+\end{equation}
+$$
+
+となる．
+
+  <List type="lower-roman">
+    <ListItem>
+      $a\neq 0$ かつ $b\neq 0$ のとき
+
+      $$
+      \begin{equation*}
+        \begin{aligned}
+          &\text{「(1)を満たす}(X,\ Y)\text{がすべて(2)を満たす」とは，}\\
+          &\text{「円(1)が半円面(2)に含まれる」}\tag{$\ast$}
+        \end{aligned}
+      \end{equation*}
+      $$
+
+      ことと同値である．よって，$a,\ b$ の満たすべき条件は，$\sqrt{2}\leqq a+b$ となる．
+    </ListItem>
+    <ListItem>
+      $a\neq 0$ かつ $b=0$ のとき
+
+      $Y=0$ により ($\ast$) は「 $X^2\leqq 1$ を満たす $X$ がすべて $X\leqq a$ を満たす」ことで，$a$ の満たすべき条件は $a\geqq 1$ となる．
+    </ListItem>
+    <ListItem>
+      $a=0$ かつ $b\neq 0$ のとき
+
+      (ii)と同様にして $b\geqq 1$ となる．
+    </ListItem>
+    <ListItem>
+      $a=0$ かつ $b=0$ のとき
+
+      $X=Y=0$ であるから(2)式は常に成り立つ．
+    </ListItem>
+
+  </List>
+
+以上から，点 $(a,\ b)$ の存在範囲は下図の網目部分(境界を含む)，太線部分および●の点となる。
+
+<Image
+  src={[
+    '/past-exams/titech/1997/f1_light.svg',
+    '/past-exams/titech/1997/f1_dark.svg',
+  ]}
+/>
+
+</TabItem>
+</Tabs>

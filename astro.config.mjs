@@ -43,16 +43,7 @@ export default defineConfig({
             {
               label: '東京科学大学(東京工業大学)',
               collapsed: true,
-              items: [
-                {
-                  label: '1984年',
-                  link: '/past-exams/titech/1984',
-                },
-                {
-                  label: '1990年',
-                  link: '/past-exams/titech/1990',
-                },
-              ],
+              autogenerate: { directory: 'past-exams/titech' },
             },
           ],
         },

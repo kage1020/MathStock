@@ -1,0 +1,116 @@
+---
+title: 2000年
+description: 東京科学大学(東京工業大学)の過去問 2000年
+tableOfContents: false
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components'
+import { Card } from '@/components/Card'
+import { List, ListItem } from '@/components/List'
+import { Image } from '@/components/Image'
+
+<Tabs>
+  <TabItem label="問題">
+    <Card>
+      実数 $a$，$b$ に対し，$f(x)=x^3+x^2+(a+b-a^2)x+ab$ とおく．
+
+      <List type="decimal">
+        <ListItem>
+          $f(x)$ を因数分解せよ．
+        </ListItem>
+        <ListItem>
+          すべての $x\geqq 0$ に対し $f(x)\geqq 0$ が成り立つための $a$，$b$ の条件を求め，それを満たす点 $(a,\ b)$ の存在する範囲を図示せよ．
+        </ListItem>
+      </List>
+    </Card>
+
+  </TabItem>
+  <TabItem label="解答">
+    <List>
+      <ListItem>
+        $$
+        \begin{align*}
+          f(x) & =(x+a)b+x\left(x^2+x+a-a^2\right) \\
+               & =(x+a)b+x(x+a)(x-a+1)      \\
+               & =(x+a)\left\{b+x(x-a+1)\right\}     \\
+               & =(x+a)\left\{x^2-(a-1)x+b\right\}
+        \end{align*}
+        $$
+      </ListItem>
+      <ListItem>
+        $g(x)=x^2-(a-1)x+b$ とおくと，
+
+        $$
+        \begin{equation*}
+          g(x)=\left(x-\frac{a-1}{2}\right)^2+b-\frac{1}{4}(a-1)^2
+        \end{equation*}
+        $$
+
+        $x=0$ のとき，$f(0)=ab\geqq 0$ となる．以下，$x>0$ で考える．
+
+        <List type="lower-roman">
+          <ListItem>
+            $a\geqq 0$ のとき
+
+            $x>0$ において $x+a>0$ であるから，$f(x)\geqq 0 \Longleftrightarrow g(x)\geqq 0$
+
+            よって，軸の位置で分類すると，$a$，$b$ の条件は，
+
+            <List type="katakana">
+              <ListItem>
+                $a\geqq 1$ のとき
+
+                $$
+                \begin{equation*}
+                  g\left(\frac{a-1}{2}\right)\geqq 0 \quad \therefore b\geqq \frac{1}{4}(a-1)^2
+                \end{equation*}
+                $$
+              </ListItem>
+              <ListItem>
+                $0\leqq a\leqq 1$ のとき
+
+                $$
+                \begin{equation*}
+                  g(0)\geqq 0 \quad \therefore b\geqq 0
+                \end{equation*}
+                $$
+              </ListItem>
+            </List>
+
+            となる．
+          </ListItem>
+          <ListItem>
+            $a< 0$ のとき
+
+            $g(x)$ が $x=-a$ の前後で符号を変えないとすると，$f(x)$ は $x=-a$ の前後で符号が変わるから，$x>0$ において $f(x)\geqq 0$ とはならない．よって, $g(x)$ が $x=-a$ の前後で符号を変えることか必要であり，このとき，
+
+            $$
+            \begin{equation*}
+              g(-a)=0 \quad \therefore b=a-2a^2
+            \end{equation*}
+            $$
+
+            逆に，$b=a-2a^2$ のとき
+
+            $$
+            \begin{align*}
+                g(x)       & =x^2-(a-1)x+a-2a^2=(x+a)(x+1-2a) \\
+                \therefore & f(x)=(x+a)^{2}(x+1-2a)
+            \end{align*}
+            $$
+
+            となるから，$a< 0$ より，$x\geqq 0$ において $f(x)\geqq 0$ となり十分である．
+          </ListItem>
+        </List>
+
+        以上から，$(a,\ b)$ の存在範囲は図の網目部分及び太線部分となる．ただし，境界を含む．
+
+        <Image src={[
+          '/past-exams/titech/2000/f1_light.svg',
+          '/past-exams/titech/2000/f1_dark.svg',
+        ]} />
+      </ListItem>
+    </List>
+
+  </TabItem>
+</Tabs>

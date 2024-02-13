@@ -1,0 +1,202 @@
+\documentclass[a4paper]{ltjsarticle}
+
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx,hidelinks,pdfusetitle]{hyperref}
+\hypersetup{
+    colorlinks=false,
+    bookmarksnumbered=true,
+    pdfborder={0 0 0},
+    bookmarkstype=toc
+}
+\usepackage[nobreak]{cite}
+\usepackage{pxjahyper}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric, shapes.misc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+% ====================
+
+\begin{itembox}[l]{東京大学 2011年 文科 第4問}
+    座標平面上の1点 P$\left(\frac{1}{2},\ \frac{1}{4}\right)$ をとる．放物線 $y=x^2$ 上の2点 Q$(\alpha,\ \alpha^2)$，R$(\beta,\ \beta^2)$ を，3点P，Q，RがQRを底辺とする二等辺三角形をなすように動かすとき，$\triangle$PQR の重心 G$(X,\ Y)$ の軌跡を求めよ．
+\end{itembox}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{2011-1.png}
+\end{figure}
+
+二等辺三角形の条件より，
+
+\begin{align*}
+     & \text{PQ}=\text{PR}(>0)                                                                                       \\
+     & \Leftrightarrow \text{PQ}^2=\text{PR}^2                                                                       \\
+     & \Leftrightarrow (\frac{1}{2}-\alpha)^2+(\frac{1}{4}-\alpha^2)^2=(\frac{1}{2}-\beta)^2+(\frac{1}{4}-\beta^2)^2 \\
+     & \Leftrightarrow \alpha^4+\frac{1}{2}\alpha^2-\alpha=\beta^4+\frac{1}{2}\beta^2-\beta                          \\
+     & \Leftrightarrow (\alpha^4-\beta^4)+\frac{1}{2}(\alpha^2-\beta^2)-(\alpha-\beta)=0                             \\
+     & \Leftrightarrow (\alpha-\beta)\left\{(\alpha^2+\beta^2)(\alpha+\beta)+\frac{1}{2}(\alpha+\beta)-1\right\}=0
+\end{align*}
+
+となる．ここで，$\alpha\neq\beta$ のとき，三角形PQRができないから，$\alpha-\beta\neq 0$ となり，
+
+\begin{equation}
+    (\alpha^2+\beta^2)(\alpha+\beta)+\frac{1}{2}(\alpha+\beta)-1=0\label{eq:1}
+\end{equation}
+
+を得る．ここで，$\alpha+\beta=s$，$\alpha\beta=t$ とおくと，$\alpha$，$\beta$ はの2次方程式 $x^2-sx+t=0$ の異なる2実数解だから，
+
+\begin{equation}
+    s^2-4t>0\label{eq:2}
+\end{equation}
+
+となる．$s$，$t$ を用いて\eqref{eq:1}を書き換えると，
+
+\begin{equation*}
+    (s^2-2t)s+\frac{1}{2}s-1=0
+\end{equation*}
+
+$s=0$ とすると， $-1=0$ となり，不適である．したがって $s\neq 0$ となる．ゆえに
+
+\begin{align}
+     & s^2-2t=\frac{1}{s}\left(1-\frac{1}{2}s\right)\nonumber                \\
+     & \therefore\quad t=\frac{1}{2}s^2-\frac{1}{2s}+\frac{1}{4}\label{eq:3}
+\end{align}
+
+である．ここで，
+
+\begin{align}
+    X & =\frac{1}{3}\left\{\frac{1}{2}+(\alpha+\beta)\right\}=\frac{1}{3}\left(\frac{1}{2}+s\right)\label{eq:4} \\
+    Y & =\frac{1}{3}\left\{\frac{1}{4}+(\alpha^2+\beta^2)\right\}                                               \\
+      & =\frac{1}{3}\left\{\frac{1}{4}+(\alpha+\beta)^2-2\alpha\beta\right\}\nonumber                           \\
+      & =\frac{1}{3}\left\{\frac{1}{4}+s^2-2t\right\}\nonumber                                                  \\
+      & =\frac{1}{3}\left(\frac{1}{s}-\frac{1}{4}\right)\label{eq:5}
+\end{align}
+
+\eqref{eq:4}より，
+
+\begin{equation}
+    s=3X-\frac{1}{2}\label{eq:6}
+\end{equation}
+
+これを\eqref{eq:5}に代入して，
+
+\begin{equation}
+    Y=\frac{1}{3}\left(\frac{1}{3X-\frac{1}{2}}-\frac{1}{4}\right)=\frac{1}{9}\cdot\frac{1}{X-\frac{1}{6}}-\frac{1}{12}\label{eq:7}
+\end{equation}
+
+ここで，\eqref{eq:2}に\eqref{eq:3}を代入して，
+
+\begin{align}
+     & -s^2+\frac{2}{s}-1>0\nonumber                     \\
+     & \Longleftrightarrow\quad s^4+s^2-2s<0\nonumber    \\
+     & \Longleftrightarrow\quad s(s-1)(s^2+s+2)<0\tag{*}
+\end{align}
+
+ここで，$s^2+s+2=\left(s+\frac{1}{2}\right)^2+\frac{7}{4}>0$ より，
+
+\begin{equation*}
+    (*)\quad\Longleftrightarrow\quad 0<s<1
+\end{equation*}
+
+これに\eqref{eq:6}を代入して，
+
+\begin{align}
+     & 0<3X-\frac{1}{2}<1\nonumber                          \\
+     & \therefore\quad\frac{1}{6}<X<\frac{1}{2}\label{eq:8}
+\end{align}
+
+ゆえに，求める軌跡は\eqref{eq:7}，\eqref{eq:8}より，曲線 $y=\frac{1}{9}\cdot\frac{1}{x-\frac{1}{6}}-\frac{1}{12}$ の $\frac{1}{6}<x<\frac{1}{2}$ の部分
+
+[別解]
+
+二等辺三角形の条件より，
+
+\begin{align*}
+     & \text{PQ}=\text{PR}(>0)                                                                                       \\
+     & \Leftrightarrow \text{PQ}^2=\text{PR}^2                                                                       \\
+     & \Leftrightarrow (\frac{1}{2}-\alpha)^2+(\frac{1}{4}-\alpha^2)^2=(\frac{1}{2}-\beta)^2+(\frac{1}{4}-\beta^2)^2 \\
+     & \Leftrightarrow \alpha^4+\frac{1}{2}\alpha^2-\alpha=\beta^4+\frac{1}{2}\beta^2-\beta                          \\
+     & \Leftrightarrow (\alpha^4-\beta^4)+\frac{1}{2}(\alpha^2-\beta^2)-(\alpha-\beta)=0                             \\
+     & \Leftrightarrow (\alpha-\beta)\left\{(\alpha^2+\beta^2)(\alpha+\beta)+\frac{1}{2}(\alpha+\beta)-1\right\}=0
+\end{align*}
+
+ここで，$\alpha=\beta$ のとき，三角形PQRができないので，$\alpha-\beta\neq 0$ ．よって，
+
+\begin{align}
+     & (\alpha^2+\beta^2)(\alpha+\beta)+\frac{1}{2}(\alpha+\beta)-1=0\nonumber         \\
+     & \Leftrightarrow \alpha^2+\beta^2=\frac{1}{\alpha+\beta}-\frac{1}{2}\label{eq:9}
+\end{align}
+
+G$(X,\ Y)$ は $\triangle$PQR の重心なので，
+
+\begin{align}
+    X & =\frac{\frac{1}{2}+(\alpha+\beta)}{3}=\frac{1}{3}\left(\alpha+\beta+\frac{1}{2}\right)\label{eq:10}             \\
+    Y & =\frac{\frac{1}{4}+\alpha^2+\beta^2}{3}=\frac{1}{3}\left(\frac{1}{\alpha+\beta}-\frac{1}{4}\right)\label{eq:11}
+\end{align}
+
+これより，
+
+\begin{equation}
+    \left\{\begin{aligned}
+         & \alpha+\beta=\frac{1}{2}(6X-1)        \\
+         & \frac{1}{\alpha+\beta}=3Y+\frac{1}{4}
+    \end{aligned}\right.\label{eq:12}
+\end{equation}
+
+となる．$\alpha-\beta\neq 0$ から $6X-1\neq 0$ であり，
+
+\begin{equation}
+    3Y+\frac{1}{4}=\frac{2}{6X-1}\quad\Longleftrightarrow\quad Y=\frac{1}{9(X-\frac{1}{6})}-\frac{1}{12}\label{eq:13}
+\end{equation}
+
+を得る．ここで，\eqref{eq:10}，\eqref{eq:11}から，
+
+\begin{equation*}
+    \left\{\begin{aligned}
+        \alpha+\beta     & =\frac{1}{2}(6X-1) \\
+        \alpha^2+\beta^2 & =3Y-\frac{1}{4}
+    \end{aligned}\right.
+\end{equation*}
+
+であり，
+
+\begin{equation*}
+    \alpha\beta = \frac{1}{2}\left\{\left(\alpha+\beta\right)^2-\left(\alpha^2+\beta^2\right)\right\}
+\end{equation*}
+
+であるから，\eqref{eq:12}は，
+
+\begin{equation}
+    \left\{\begin{aligned}
+         & \alpha+\beta=\frac{6X-1}{2}         \\
+         & \alpha\beta=\frac{18X^2-6X-6Y+1}{4}
+    \end{aligned}\right.\label{eq:14}
+\end{equation}
+
+と同値である．\eqref{eq:14}を満たす異なる実数 $\alpha$，$\beta$ が存在するための $(X,\ Y)$ の条件を求める．これは $t$ の2次方程式
+
+\begin{equation}
+    t^2-\frac{6X-1}{2}t+\frac{18X^2-6X-6Y+1}{4}=0\label{eq:15}
+\end{equation}
+
+が異なる2つの実数解を持つための条件であり，\eqref{eq:15}についての判別式 $D>0$ なので，
+
+\begin{align}
+     & \left(\frac{6X-1}{2}\right)^2-4\cdot\frac{18X^2-6X-6Y+1}{4}>0\nonumber                       \\
+     & \Longleftrightarrow\quad Y>\frac{3}{2}X^2-\frac{1}{2}X+\frac{1}{8}\nonumber                  \\
+     & \Longleftrightarrow\quad Y>\frac{3}{2}\left(X-\frac{1}{6}\right)^2+\frac{1}{12}\label{eq:16}
+\end{align}
+
+よって，$(X,\ Y)$ は\eqref{eq:13}かつ\eqref{eq:16}を満たす．逆に\eqref{eq:13}かつ\eqref{eq:16}を満たす任意の $X, Y$ に対して $t$ の2次方程式\eqref{eq:15}の解を $\alpha$，$\beta$ とすると，\eqref{eq:14}が成り立ち，\eqref{eq:13}，\eqref{eq:14}から\eqref{eq:9}，\eqref{eq:10}，\eqref{eq:11}を得る．よって，放物線上に点 Q$(\alpha,\alpha^2)$，点 R$(\beta,\beta^2)$ をとると，確かに PQ$=$PR が成り立ち，かつ $(X,\ Y)$ は $\triangle$PQR の重心になっている．ゆえに，\eqref{eq:13}かつ\eqref{eq:16}を満たす $(X,\ Y)$ が重心 G の軌跡である．
+
+曲線 $y=\frac{1}{9}\cdot\frac{1}{x-\frac{1}{6}}-\frac{1}{12}$ の $\frac{1}{6}<x<\frac{1}{2}$ の部分
+
+% ====================
+
+\end{document}

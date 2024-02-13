@@ -1,0 +1,149 @@
+\documentclass[a4paper]{ltjsarticle}
+
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx,hidelinks,pdfusetitle]{hyperref}
+\hypersetup{
+    colorlinks=false,
+    bookmarksnumbered=true,
+    pdfborder={0 0 0},
+    bookmarkstype=toc
+}
+\usepackage[nobreak]{cite}
+\usepackage{pxjahyper}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric, shapes.misc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+% ====================
+
+\begin{itembox}[l]{東京大学 2011年 文科 第4問}
+    座標平面上の放物線 $C$ を $y=x^2+1$ で定める．$s, t$ は実数とし $t<0$ を満たすとする．点 $(s, t)$ から放物線 $C$ へ引いた接線を $l_1, l_2$ とする．
+
+    \begin{enumerate}[label=(\arabic*)]
+        \item $l_1, l_2$ の方程式を求めよ．
+        \item $a$ を正の実数とする．放物線 $C$ と直線 $l_1, l_2$ で囲まれる領域の面積が $a$ となる $(s, t)$ を全て求めよ．
+    \end{enumerate}
+\end{itembox}
+
+\begin{enumerate}[label=(\arabic*)]
+    \item
+          $y=x^2+1$ 上の点 P$(p,\ p^2+1)$ における接線の方程式は，
+
+          \begin{align}
+               & y=2p(x-p)+p^2+1\nonumber                \\
+               & \therefore\quad y=2px-p^2+1\label{eq:1}
+          \end{align}
+
+          \eqref{eq:1}が点 $(s, t)$ を通るとき，
+
+          \begin{align}
+               & t=2ps-p^2+1\nonumber                      \\
+               & \therefore\quad p^2-2ps+t-1=0\label{eq:2}
+          \end{align}
+
+          \eqref{eq:2}より，$(s,\ t)$ から $C$ に引いた接線の接点の $x$ 座標 $p$ は
+
+          \begin{equation}
+              p=s\pm\sqrt{s^2-t+1}\label{eq:3}
+          \end{equation}
+
+          したがって，$l_1, l_2$ の方程式は\eqref{eq:1}に\eqref{eq:3}を代入して，
+
+          \begin{align}
+              l_1\colon & y=2(s-\sqrt{s^2-t+1})x-(s-\sqrt{s^2-t+1})^2+1\label{eq:4} \\
+              l_2\colon & y=2(s+\sqrt{s^2-t+1})x-(s+\sqrt{s^2-t+1})^2+1\label{eq:5}
+          \end{align}
+
+    \item
+          \begin{equation*}
+              \alpha=s-\sqrt{s^2-t+1},\ \beta=s+\sqrt{s^2-t+1}
+          \end{equation*}
+
+          とおくと，\eqref{eq:4}，\eqref{eq:5}はそれぞれ
+
+          \begin{align}
+              y & =2\alpha x-\alpha^2+1\label{eq:6} \\
+              y & =2\beta x-\beta^2+1\label{eq:7}
+          \end{align}
+
+          となり，\eqref{eq:6}，\eqref{eq:7}の交点の $x$ 座標は，$x=\frac{\alpha+\beta}{2}$ である．したがって，$C$ と $l_1, l_2$ で囲まれる部分の面積を $S$ とすると，
+
+          \begin{figure}[!ht]
+              \centering
+              \includegraphics[width=0.5\textwidth]{2012-1.png}
+          \end{figure}
+
+          \begin{align*}
+              S & =\int_\alpha^{\frac{\alpha+\beta}{2}}\left\{x^2+1-(2\alpha x-\alpha^2+1)\right\}dx+\int_{\frac{\alpha+\beta}{2}}^\beta\left\{x^2+1-(2\beta x-\beta^2+1)\right\}dx \\
+                & =\int_\alpha^{\frac{\alpha+\beta}{2}}(x-\alpha)^2dx+\int_{\frac{\alpha+\beta}{2}}^\beta(x-\beta)^2dx                                                              \\
+                & =\left[\frac{1}{3}(x-\alpha)^3\right]_\alpha^{\frac{\alpha+\beta}{2}}+\left[\frac{1}{3}(x-\beta)^3\right]_{\frac{\alpha+\beta}{2}}^\beta                          \\
+                & =\frac{1}{12}(\beta-\alpha)^3                                                                                                                                     \\
+                & =\frac{1}{12}(2\sqrt{s^2-t+1})^3                                                                                                                                  \\
+                & =\frac{2}{3}(s^2-t+1)^{\frac{3}{2}}
+          \end{align*}
+
+          $S=a$ のとき，
+
+          \begin{align*}
+               & \frac{2}{3}(s^2-t+1)^{\frac{3}{2}}=a                            \\
+               & \therefore\quad s^2-t+1=\left(\frac{3}{2}a\right)^{\frac{2}{3}} \\
+               & \therefore\quad t=s^2+1-\left(\frac{3}{2}a\right)^{\frac{2}{3}}
+          \end{align*}
+
+          \begin{enumerate}[label=(\roman*)]
+              \item $1-\left(\frac{3}{2}a\right)^{\frac{2}{3}}\geq 0\Longleftrightarrow 0<a\leq\frac{2}{3}$ のとき，
+
+                    \begin{equation*}
+                        t=s^2+1-\left(\frac{3}{2}a\right)^{\frac{2}{3}}\geq 0
+                    \end{equation*}
+
+                    より，$t<0$ を満たす $(s,\ t)$ は存在しない．
+              \item $1-\left(\frac{3}{2}a\right)^{\frac{2}{3}}<0\Longleftrightarrow a>\frac{2}{3}$ のとき，
+
+                    $t=s^2+1-\left(\frac{3}{2}a\right)^{\frac{2}{3}}$ かつ $t<0$ を満たす $(s,\ t)$ が求める部分である．
+          \end{enumerate}
+\end{enumerate}
+
+[別解]
+
+\begin{enumerate}[label=(\arabic*)]
+    \item 点 $(s,\ t)$ を通る傾き $a$ の直線は，
+
+          \begin{equation*}
+              y=a(x-s)+t=ax-as+t
+          \end{equation*}
+
+          と表せる．これが，放物線 $C$ と接するとき，
+
+          \begin{equation*}
+              x^2+1=ax^as+t\quad\Longleftrightarrow\quad x^2-ax+1+as-t=0
+          \end{equation*}
+
+          より，上式の判別式を $D$ とすると，$D=0$ が成り立てばよい．したがって，
+
+          \begin{align*}
+              D                                       & =0                                             \\
+              \Longleftrightarrow\quad a^2-4(1+as-t)  & =0                                             \\
+              \Longleftrightarrow\quad a^2-4sa+4(t-1) & =0                                             \\
+              \therefore\quad a                       & =2s\pm\sqrt{4s^2-4(t-1)}=2(s\pm\sqrt{s^2-t+1})
+          \end{align*}
+
+          と求まる．したがって，$l_1, l_2$ の方程式は，
+
+          \begin{equation*}
+              y=2(s\pm\sqrt{s^2-t+1})x-2(s\pm\sqrt{s^2-t+1})s+t
+          \end{equation*}
+
+          となる．
+\end{enumerate}
+
+% ====================
+
+\end{document}

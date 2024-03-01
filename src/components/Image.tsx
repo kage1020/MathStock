@@ -1,3 +1,5 @@
+import { cn } from '@/lib/utils'
+
 export const Image = ({
   className,
   src,
@@ -8,11 +10,11 @@ export const Image = ({
   caption: string
 }) => {
   return (
-    <picture className={className}>
+    <picture className={cn('w-full', className)}>
       {src.length > 1 && (
         <source srcSet={src[1]} media='(prefers-color-scheme: dark)' />
       )}
-      <img src={src[0]} alt={caption} className='mx-auto' />
+      <img src={src[0]} alt={caption} className='w-full max-h-full' />
       <figcaption className='text-center'>{caption}</figcaption>
     </picture>
   )

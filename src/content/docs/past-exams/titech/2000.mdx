@@ -8,6 +8,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components'
 import { Card } from '@/components/Card'
 import { List, ListItem } from '@/components/List'
 import { Image } from '@/components/Image'
+import { Dialog } from '@/components/Dialog'
 
 <Tabs>
   <TabItem label="問題">
@@ -105,10 +106,12 @@ import { Image } from '@/components/Image'
 
         以上から，$(a,\ b)$ の存在範囲は図の網目部分及び太線部分となる．ただし，境界を含む．
 
+        <Dialog client:only>
         <Image src={[
           '/past-exams/titech/2000/f1_light.svg',
           '/past-exams/titech/2000/f1_dark.svg',
         ]} />
+        </Dialog>
       </ListItem>
     </List>
 

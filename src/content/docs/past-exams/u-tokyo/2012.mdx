@@ -9,6 +9,7 @@ import { Card } from '@/components/Card'
 import { List, ListItem } from '@/components/List'
 import { Supplement } from '@/components/Supplement'
 import { Image } from '@/components/Image'
+import { Dialog } from '@/components/Dialog'
 
 <Tabs>
   <TabItem label="問題">
@@ -121,7 +122,9 @@ import { Image } from '@/components/Image'
 
         となり，(6)，(7)の交点の $x$ 座標は，$x=\frac{\alpha+\beta}{2}$ である．したがって，$C$ と $l_1, l_2$ で囲まれる部分の面積を $S$ とすると，
 
+        <Dialog client:only>
         <Image src={["/coming-soon.png"]} />
+        </Dialog>
 
         $$
         \begin{align*}

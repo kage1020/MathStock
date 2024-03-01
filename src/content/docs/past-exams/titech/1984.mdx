@@ -8,6 +8,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components'
 import { Card } from '@/components/Card'
 import { List, ListItem } from '@/components/List'
 import { Image } from '@/components/Image'
+import { Dialog } from '@/components/Dialog'
 
 <Tabs>
   <TabItem class="overflow-x-auto" label="問題">
@@ -94,8 +95,12 @@ import { Image } from '@/components/Image'
 
     である。
 
-    <Image src={["/past-exams/titech/1984/f1_light.svg","/past-exams/titech/1984/f1_dark.svg"]} caption="(i)" />
-    <Image src={["/past-exams/titech/1984/f2_light.svg","/past-exams/titech/1984/f2_dark.svg"]} caption="(ii)" />
+    <Dialog client:only>
+      <Image src={["/past-exams/titech/1984/f1_light.svg","/past-exams/titech/1984/f1_dark.svg"]} caption="(i)" />
+    </Dialog>
+    <Dialog client:only>
+      <Image src={["/past-exams/titech/1984/f2_light.svg","/past-exams/titech/1984/f2_dark.svg"]} caption="(ii)" />
+    </Dialog>
 
   </TabItem>
 </Tabs>

@@ -9,6 +9,7 @@ import { Card } from '@/components/Card'
 import { List, ListItem } from '@/components/List'
 import { Supplement } from '@/components/Supplement'
 import { Image } from '@/components/Image'
+import { Dialog } from '@/components/Dialog'
 
 <Tabs>
   <TabItem label="問題">
@@ -30,7 +31,9 @@ import { Image } from '@/components/Image'
     <List>
       <ListItem>
 
+        <Dialog client:only>
         <Image src={["/coming-soon.png"]} />
+        </Dialog>
 
         $C_2$ の中心を $O_2$，$C_3$ の中心を $O_3$ とし， $C_1$ と $C_3$ の接点を $A$，$C_3$ の接点を $B$ とする．
 
@@ -145,7 +148,9 @@ import { Image } from '@/components/Image'
           <ListItem>
             $a\leq -\frac{1}{2}$ のとき，
 
+            <Dialog client:only>
             <Image src={["/coming-soon.png"]} />
+            </Dialog>
 
             $$
             \begin{align*}
@@ -157,7 +162,9 @@ import { Image } from '@/components/Image'
           <ListItem>
             $a\geq \frac{1}{2}$ のとき，
 
+            <Dialog client:only>
             <Image src={["/coming-soon.png"]} />
+            </Dialog>
 
             $$
             \begin{align*}
@@ -169,7 +176,9 @@ import { Image } from '@/components/Image'
           <ListItem>
             $-\frac{1}{2}\leq a\leq\frac{1}{2}$ のとき，
 
+            <Dialog client:only>
             <Image src={["/coming-soon.png"]} />
+            </Dialog>
 
             $$
             \begin{align*}
@@ -236,7 +245,9 @@ import { Image } from '@/components/Image'
   <TabItem label="解答">
     <List type="decimal">
       <ListItem>
+        <Dialog client:only>
         <Image src={["/coming-soon.png"]} />
+        </Dialog>
 
         $-1\leq t\leq 1$ に対し，平面 $y=t$ での $W(a)$ の断面積を $S(t)$ とおくと，
 
@@ -284,10 +295,14 @@ import { Image } from '@/components/Image'
         \end{equation*}
         $$
 
+        <Dialog client:only>
         <Image src={["/coming-soon.png"]} />
+        </Dialog>
 
         <Supplement>
+          <Dialog client:only>
           <Image src={["/coming-soon.png"]} />
+          </Dialog>
 
           $V(a)-W(a)$ を考える．$V(a)-W(a)$ は上図の斜線部を $z$ 軸を軸にして一周させた回転体の体積と等しい．よって
 

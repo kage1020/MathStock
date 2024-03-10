@@ -1,0 +1,67 @@
+\documentclass[a4paper]{ltjsarticle}
+
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx,hidelinks,pdfusetitle]{hyperref}
+\hypersetup{
+    colorlinks=false,
+    bookmarksnumbered=true,
+    pdfborder={0 0 0},
+    bookmarkstype=toc
+}
+\usepackage[nobreak]{cite}
+\usepackage{pxjahyper}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric, shapes.misc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{itembox}[l]{京都大学 2009年 第5問}
+    $xy$ 平面上で原点を極，$x$ 軸の正の部分を始線とする極座標に関して，極方程式 $r=2+\cos\theta\ (0\leq \theta\leq \pi)$ により表される曲線を $C$ とする．$C$ と $x$ 軸とで囲まれた図形を $x$ 軸の周りに1回転して得られる立体の体積を求めよ．
+\end{itembox}
+
+$C$ 上の点を直交座標で表すと，
+
+\begin{equation*}
+    \begin{cases}
+        x & =r\cos\theta=(2+\cos\theta)\cos\theta \\
+        y & =r\sin\theta=(2+\cos\theta)\sin\theta
+    \end{cases}
+\end{equation*}
+
+よって，
+
+\begin{equation*}
+    \frac{\mathrm{d}x}{\mathrm{d}\theta}=-\sin\theta\cos\theta+(2+\cos\theta)(-\sin\theta)=-2\sin\theta(1+\cos\theta)
+\end{equation*}
+
+したがって $0< \theta< \pi$ において $\frac{\mathrm{d}x}{\mathrm{d}\theta}< 0$ となり，$x$ は単調に減少する．また，$\theta=0$ のとき $x=3,\theta=\pi$ のとき $x=-1$ である．ゆえに求める体積 $V$ は
+
+\begin{align*}
+    V & =\int_{-1}^3\pi y^2dx                                                                      \\
+      & =\pi\int_\pi^0(2+\cos\theta)^2\sin^2\theta\left\{-2\sin\theta(1+\cos\theta)\right\}d\theta \\
+      & =2\pi\int_0^\pi(2+\cos\theta)^2(1-\cos^2\theta)(1+\cos\theta)\sin\theta d\theta            \\
+\end{align*}
+
+ここで $t=\cos\theta$ と置換すれば，
+
+\begin{equation*}
+    \frac{\mathrm{d}t}{\mathrm{d}\theta}=-\sin\theta, \theta\colon 0\to\pi\text{のとき}t\colon 1\to-1
+\end{equation*}
+
+より，
+
+\begin{align*}
+    V & =2\pi\int_{-1}^1(2+t)^2(1-t^2)(1+t)(-1)dt    \\
+      & =2\pi\int_{-1}^1(-t^5-5t^4-7t^3+t^2+8t+4)dt  \\
+      & =4\pi\int_0^1(-5t^4+t^2+4)dt                 \\
+      & =4\pi\left[-t^5+\frac{1}{3}t^3+4t\right]_0^1 \\
+      & =\frac{40}{3}\pi
+\end{align*}
+
+\end{document}

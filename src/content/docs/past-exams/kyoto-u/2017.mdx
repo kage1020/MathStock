@@ -1,0 +1,121 @@
+---
+title: 2017年
+description: 京都大学の過去問 2017年
+tableOfContents: false
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components'
+import { Card } from '@/components/Card'
+import { List, ListItem } from '@/components/List'
+import { Image } from '@/components/Image'
+import { Dialog } from '@/components/Dialog'
+
+<Tabs>
+  <TabItem label="問題">
+    <Card>
+      $w$ を0でない複素数，$x$，$y$ を $w+\frac{1}{w}=x+yi$ を満たす実数とする。
+
+      <List type="decimal">
+        <ListItem>
+          実数 $R$ は $R>1$ を満たす定数とする。$w$ が絶対値 $R$ の複素数全体をうごくとき，$xy$ 平面上の点 $(x,y)$ の軌跡を求めよ。
+        </ListItem>
+        <ListItem>
+          実数 $\alpha$ は $0< \alpha< \pi/2$ を満たす定数とする。$w$ が偏角 $\alpha$ の複素数全体をうごくとき，$xy$ 平面上の点 $(x,y)$ の軌跡を求めよ。
+        </ListItem>
+      </List>
+    </Card>
+
+  </TabItem>
+  <TabItem label="解答">
+    <List type="decimal">
+      <ListItem>
+        $$
+        \begin{equation}
+            w+\frac{1}{w}=x+yi\tag{1}
+        \end{equation}
+        $$
+
+        $w=R(\cos\theta+i\sin\theta)\ (0\leq \theta< 2\pi)$ とおけて，(1)式に代入すると，
+
+        $$
+        \begin{equation*}
+            x+yi=R(\cos\theta+i\sin\theta)+\frac{1}{R(\cos\theta+i\sin\theta)}=R(\cos\theta+i\sin\theta)+\frac{1}{R}(\cos\theta-i\sin\theta)
+        \end{equation*}
+        $$
+
+        $x, y, R, \theta$ は実数より，
+
+        $$
+        \begin{equation}
+            x=\left(R+\frac{1}{R}\right)\cos\theta,\quad y=\left(R-\frac{1}{R}\right)\sin\theta\tag{2}
+        \end{equation}
+        $$
+
+        $R>1$ より，
+
+        $$
+        \begin{equation}
+            R+\frac{1}{R}>R-\frac{1}{R}>0\tag{3}
+        \end{equation}
+        $$
+
+        (2)式，(3)式と $0\leq \theta< 2\pi$ より，点 $(x,y)$ の軌跡は
+
+        $$
+        \begin{equation*}
+            \frac{x^2}{\left(R+\frac{1}{R}\right)^2}+\frac{y^2}{\left(R-\frac{1}{R}\right)^2}=1
+        \end{equation*}
+        $$
+      </ListItem>
+      <ListItem>
+        $w=r(\cos\alpha+i\sin\alpha)\ (r>0)$ とおけて，(2)式と同様にして，
+
+        $$
+        \begin{align}
+            x & =\left(r+\frac{1}{r}\right)\cos\alpha\tag{4} \\
+            y & =\left(r-\frac{1}{r}\right)\sin\alpha\tag{5}
+        \end{align}
+        $$
+
+        (4)式，(5)式より，$r$ を消去すると，
+
+        $$
+        \begin{equation}
+            \left(\frac{x}{\cos\alpha}\right)^2-\left(\frac{y}{\sin\alpha}\right)^2=4\quad\Longleftrightarrow\quad \frac{x^2}{(2\cos\alpha)^2}-\frac{y^2}{(2\sin\alpha)^2}=1\tag{6}
+        \end{equation}
+        $$
+
+        次に，$rt$ 平面上で，
+
+        $$
+        \begin{equation*}
+            t=r+\frac{1}{r},\quad t=r-\frac{1}{r}\quad (r>0)
+        \end{equation*}
+        $$
+
+        のグラフは下図である。
+
+        <Dialog client:only>
+          <Image src={["/coming-soon.png"]} />
+        </Dialog>
+
+        よって，(4)式，(5)式より，$x$，$y$の取り得る値の範囲は，$0< \alpha< \pi/2$ より，
+
+        $$
+        \begin{equation}
+            x\geq 2\cos\alpha,\quad y\text{は全実数}\tag{7}
+        \end{equation}
+        $$
+
+        (6)式，(7)式より，点 $(x,y)$ の軌跡は，
+
+        $$
+        \begin{equation*}
+            \frac{x^2}{(2\cos\alpha)^2}-\frac{y^2}{(2\sin\alpha)^2}=1\text{の}x>0\text{の部分}
+        \end{equation*}
+        $$
+      </ListItem>
+    </List>
+
+  </TabItem>
+</Tabs>

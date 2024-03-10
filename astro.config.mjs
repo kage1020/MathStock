@@ -42,6 +42,11 @@ export default defineConfig({
               autogenerate: { directory: 'past-exams/u-tokyo' },
             },
             {
+              label: '京都大学',
+              collapsed: true,
+              autogenerate: { directory: 'past-exams/kyoto-u' },
+            },
+            {
               label: '東京科学大学(東京工業大学)',
               collapsed: true,
               autogenerate: { directory: 'past-exams/titech' },

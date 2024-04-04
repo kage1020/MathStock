@@ -17,7 +17,7 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     starlight({
-      title: 'MathTeXBook',
+      title: 'MathStock',
       social: {
         github: 'https://github.com/kage1020',
         'x.com': 'https://x.com/kage1020',
@@ -30,7 +30,7 @@ export default defineConfig({
         },
       },
       editLink: {
-        baseUrl: 'https://github.com/kage1020/MathTeXBook/edit/main/',
+        baseUrl: 'https://github.com/kage1020/MathStock/edit/main/',
       },
       sidebar: [
         {

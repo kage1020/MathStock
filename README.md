@@ -1,6 +1,14 @@
-# TeXBook
+# MathStock
 
-## TikZ to SVG
+MathStock is a collection of LaTeX format Math Examinations and Solutions.
+
+## License
+
+This repository is licensed under no license. Rights of the questions and solutions are reserved to the each university and the author of the solutions.
+
+## Development
+
+### TikZ to SVG
 
 <https://www.latex4technics.com/?note=27RX>
 
